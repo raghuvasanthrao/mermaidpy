@@ -82,6 +82,15 @@ A -->|step 1| B
 B -->|step 2| C
 ```
 
+```mermaid
+flowchart TD   
+A[Start]       
+B[Process]     
+C[End]
+A -->|step 1| B
+B -->|step 2| C
+```
+
 ---
 
 ## 🛠 Using Utility Functions
@@ -141,6 +150,15 @@ print(chart.render())
 **Output:**
 
 ```
+flowchart TD
+A[Start]
+B[Option 1]
+C[Option 2]
+A --> B
+A --> C
+```
+
+```mermaid
 flowchart TD
 A[Start]
 B[Option 1]
