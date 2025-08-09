@@ -1,20 +1,11 @@
-Alright — I’ll update your **README.md** so it:
-
-* Explains **`.mmd` files**
-* Includes the **`utils.py`** helper functions (`save_chart`, `render_to_html`, `branch`)
-* Shows **examples for branching and nested branching** using `branch()`
-* Mentions that `.mmd` files can be previewed in editors and docs tools
-
----
-
 ## **Updated README.md**
 
-````markdown
-# MermaidPy
+```markdown
+# py2mermaid
 
-MermaidPy is a Python library that makes it easy to generate [Mermaid.js](https://mermaid.js.org/) diagrams directly from Python.
+py2mermaid is a Python library that makes it easy to generate [Mermaid.js](https://mermaid.js.org/) diagrams directly from Python.
 
-With MermaidPy, you can create:
+With py2mermaid, you can create:
 - Flowcharts (TD, LR, BT, RL)
 - Branching flowcharts (decision trees)
 - Nested branches (branch of a branch)
@@ -29,13 +20,13 @@ Mermaid.js allows you to render these diagrams in Markdown, documentation tools,
 
 ### From PyPI
 ```bash
-pip install mermaidpy
-````
+pip install py2mermaid
+```
 
 ### From GitHub
 
 ```bash
-pip install git+https://github.com/yourusername/mermaidpy.git
+pip install git+https://github.com/yourusername/py2mermaid.git
 ```
 
 ---
@@ -68,7 +59,7 @@ You can:
 ## 🚀 Quick Start
 
 ```python
-from mermaidpy.chart import MermaidChart
+from py2mermaid.chart import MermaidChart
 
 chart = MermaidChart(chart_type="flowchart", direction="TD")
 chart.add_node("A", "Start")
@@ -106,8 +97,8 @@ The `utils.py` file includes:
 ### 1️⃣ Save a Chart as `.mmd`
 
 ```python
-from mermaidpy.chart import MermaidChart
-from mermaidpy.utils import save_chart
+from py2mermaid.chart import MermaidChart
+from py2mermaid.utils import save_chart
 
 chart = MermaidChart("flowchart", "LR")
 chart.add_node("A", "Start")
@@ -122,7 +113,7 @@ save_chart(chart, "my_chart")  # Saves as my_chart.mmd
 ### 2️⃣ Render to HTML for Preview
 
 ```python
-from mermaidpy.utils import render_to_html
+from py2mermaid.utils import render_to_html
 
 render_to_html(chart, "my_chart")  # Saves as my_chart.html
 # Open in browser to view
@@ -133,8 +124,8 @@ render_to_html(chart, "my_chart")  # Saves as my_chart.html
 ### 3️⃣ Branching Flowchart (Decision Tree)
 
 ```python
-from mermaidpy.chart import MermaidChart
-from mermaidpy.utils import branch
+from py2mermaid.chart import MermaidChart
+from py2mermaid.utils import branch
 
 chart = MermaidChart("flowchart", "TD")
 chart.add_node("A", "Start")
@@ -196,7 +187,7 @@ A --> C
 
 ## 💡 Tips
 
-* MermaidPy **generates code** — rendering is done by Mermaid.js in browsers or Markdown processors.
+* py2mermaid **generates code** — rendering is done by Mermaid.js in browsers or Markdown processors.
 * Save `.mmd` files to reuse diagrams in docs.
 * Use `render_to_html()` for instant browser preview.
 
@@ -217,7 +208,6 @@ This project is licensed under the MIT License.
 5. Open a Pull Request
 
 ```
-
 ---
 
 I’ve now included:
