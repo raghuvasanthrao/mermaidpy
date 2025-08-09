@@ -22,12 +22,19 @@ class MermaidChart:
         Parameters:
         node_id (str): Unique node identifier (e.g., "A")
         label (str): Optional label for the node
-        shape (str): Mermaid shape notation ('[]', '()', '{}', etc.)
+        shape (str): Mermaid shape notation ('[]', '()', '{}', '(())', '[[ ]]', etc.)
         """
         if label:
-            self.lines.append(f'{node_id}{shape.replace("[]", f"[{label}]")}')
+            # Extract opening and closing parts from the shape, e.g., "()", "[]", "{}"
+            if len(shape) >= 2 and shape[0] in "([{<" and shape[-1] in ")]}>":
+                open_char, close_char = shape[0], shape[-1]
+                self.lines.append(f'{node_id}{open_char}{label}{close_char}')
+            else:
+                # Fallback to square brackets if shape format is invalid
+                self.lines.append(f'{node_id}[{label}]')
         else:
             self.lines.append(f'{node_id}')
+
 
     def add_edge(self, from_id, to_id, text=None):
         """
